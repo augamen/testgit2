@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+.sec {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.poster {
+	/* margin-bottom: .3215rem; */
+}
+
+.poster-list img {
+	width: 100%;
+}
+
+.poster-list .poster-txt {
+	position: relative;
+	overflow: hidden;
+	transition: height 2s linear;
+}
+
+.poster-list .poster-txt.xg:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 10rem;
+	background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+}
+
+.poster-btn {
+	outline: none;
+	display: block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #dcdcdc;
+	margin: .1rem auto;
+	color: #666;
+	font-size: .28rem;
+	text-align: center;
+	
+	
+}
+.poster-btn:hover{
+	background-color: #f70;
+	color: #FFFFFF;
+}
+
+/* .current-menu {
+	background: url(../img/arrowposterhui.jpg) no-repeat 2.7rem center;
+	content: '';
+	display: block;
+} */

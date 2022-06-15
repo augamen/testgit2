@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册页面</title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="body">
+		<div class="box">
+			<form>
+				<input type="text" name="username" id="uname" class="uname" value="" onblur="checkuname()" placeholder="请输入用户名"/><span id="nameError"></span>
+				<input type="password" name="pw" id="pw1" value="" class="upass" onblur="checkpw1()" placeholder="请输入登录密码:至少包含字母、数字、特殊字符，1-9位"/><span id="psw1Error"></span>
+				<input type="password" name="pw" id="pw2" value="" onblur="validate()" placeholder="请再次输入登录密码"/><span id="tishi"></span>
+				<input type="tel" name="tel" id="utel" value="" onblur="checkutel()" placeholder="请输入手机号"/><span id="telError"></span>
+				<div>
+				<input class="in1" type="checkbox" name="" id="agree" value="" />我已阅读并同意<span>服务条款</span>、<span>隐私政策</span>
+				</div>
+				<input class="in2 login" type="button" id="sub" name="" value="注册" disabled="disabled"/>
+				<div class="box2">
+					<p align="center">已有账号，<span><a href="Sign.html">返回登陆></a></span></p>
+				</div>
+			</form>
+		</div>
+		</div>
+		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$('#agree').change(function() {
+					var check = $(this).prop('checked');
+					$('#sub').prop('disabled', !check);
+				})	
+			})
+		</script>
+	</body>
+</html>
+

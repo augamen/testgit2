@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+.body {
+	width: 100%;
+	height: 100vh;
+	background: url(../img/sign_bg.db29b0fb.png) no-repeat center /cover;
+	background-position-y: 10px;
+	background-color: #b8e5f8;
+	overflow: hidden;
+}
+
+.box {
+	width: 600px;
+	height: 500px;
+	margin: auto;
+	margin-top: 10%;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+
+input {
+	width: 400px;
+	height: 50px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding: 0 20px;
+}
+
+input:focus {
+	outline: none;
+}
+
+.in1 {
+	width: 13px;
+	height: 13px;
+}
+
+.in2 {
+	width: 350px;
+	height: 45px;
+	margin-left: 90px;
+}
+
+span {
+	color: #1E90FF;
+}
+
+#sub:disabled {
+	cursor: not-allowed;
+	opacity: 0.4;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录页面</title>
+		<link rel="stylesheet" type="text/css" href="css/Sign.css" />
+		<script src="js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="body">
+			<form action="" method="">
+				<div class="body_main">
+
+					<input class="input1" type="radio" name="r1" checked="checked" id="r1" value="" />
+					<label for="r1">手机登录</label>
+					<div class="box_1">
+						<input type="text" id="" value="" placeholder="输入手机号" /><br>
+						<input type="text" name="" placeholder="输入6位数验证码" /><br>
+						<a href="https://www.baidu.com/">获取短信验证码</a>
+						<input type="submit" id="in1" name="" value="登录" />
+						<p align="center">没有账号，<span><a href="register.html">去注册></a></span></p>
+						<div>
+							<p>未注册手机验证后自动登录，注册即代表同意《ASK协议》《隐私保护指引》</p>
+						</div>
+						<div>
+							<span>社交账号登录</span>
+							<p><span></span>微信<span></span>QQ<span></span>微博</p>
+						</div>
+						<p>下载ASK APP</p>
+					</div>
+
+					<input class="input2" type="radio" name="r1" id="r2" value="" />
+					<label for="r2">密码登录</label>
+					<div class="box_2">
+						<input type="text" id="name" value="" class="uname" placeholder="账号或者邮箱" /><br>
+						<input type="password" name="paw" class="upass" id="paw" placeholder="密码" /><br>
+						<a href="https://www.baidu.com/">忘记密码？</a>
+						<input type="button" id="in2" name="" class="login" value="登录" />
+						<p align="center">没有账号，<span><a href="register.html">去注册></a></span></p>
+						<div>
+							<p>未注册手机验证后自动登录，注册即代表同意《ASK协议》《隐私保护指引》</p>
+						</div>
+						<div>
+							<span>社交账号登录</span>
+							<p><span></span>微信<span></span>QQ<span></span>微博</p>
+						</div>
+						<p>下载ASK APP</p>
+					</div>
+
+				</div>
+			</form>
+		</div>
+		<!-- <script src="js/sign.js" type="text/javascript" charset="utf-8"></script> -->
+		<script>
+		$(function(){
+			// 01 单击login 执行ajax请求登录
+			$(".login").click(function(){
+				// 获取用户名和密码的值
+				var uname = $(".uname").val();
+				var upass = $(".upass").val();
+				// 发起ajax请求
+				$.ajax({
+					url:"https://520mg.com/member/index_login2.php",
+					method:"POST",
+					data:{  // 发给服务器验证的数据
+						fmdo:"login",
+						dopost:"login",
+						userid:uname,
+						pwd:upass
+					},
+					dataType:"json",//返回的数据格式是json
+					xhrFields: {
+						withCredentials: true,//把本地127.0.0.1的cookie发送给520mg.com
+					}
+				})
+				.then(res=>{
+					// 弹出服务器返回的信息
+					alert(res.msg);
+					if(res.status==1){ //如果status为1登录成功
+						// 跳转到首页
+						location.href="index.html"
+					}
+				})
+				.catch(xhr=>console.log("网络请求失败"))
+				
+			})
+			// 02 ajax通过,登录成功跳转到首页
+			// zeng8,zeng9,zeng10-----zeng200
+			// zmm123
+		})
+		</script>
+	</body>
+</html>
